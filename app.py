@@ -10,7 +10,13 @@ app = Flask(__name__)
 def index():
     return "Hello, world!"
 
+@app.route('/projects/')
+def projects():
+    return 'The project page'
 
+@app.route('/about')
+def about():
+    return 'The about page'
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
