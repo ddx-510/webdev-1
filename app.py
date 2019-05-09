@@ -14,12 +14,13 @@ def index():
 
 @app.route('/login', methods=['GET'])
 def login():
-	data = request.args.get('username','password' )
-	print(data)
-##    username = request.args.get('username')
+	##data = request.args.get('username','password' )
+	##print(data)
+   username = request.args.get('username')
 #  print(data['username'])
-##    password= request.args.get('password')
+   password= request.args.get('password')
  #   print(data['password'])
+   return username,password
 
 @app.route('/user/<username>')
 def profile(username):
