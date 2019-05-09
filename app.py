@@ -15,10 +15,11 @@ def index():
 @app.route('/login', methods=['GET'])
 def login():
 	data = request.args.get()
+	print(data)
 ##    username = request.args.get('username')
-    print(data['username'])
+#  print(data['username'])
 ##    password= request.args.get('password')
-    print(data['password'])
+ #   print(data['password'])
 
 @app.route('/user/<username>')
 def profile(username):
