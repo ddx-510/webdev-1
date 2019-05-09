@@ -10,6 +10,7 @@ app = Flask(__name__)
 def index():
     return "Hello, world!"
 
+# /login?username=x&password=1
 
 @app.route('/login', methods=['GET'])
 def login():
