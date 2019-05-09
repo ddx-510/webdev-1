@@ -20,7 +20,7 @@ def login():
 #  print(data['username'])
    password= request.args.get('password')
  #   print(data['password'])
-   return username,password
+   return username + password
 
 @app.route('/user/<username>')
 def profile(username):
