@@ -14,7 +14,7 @@ def index():
 
 @app.route('/login', methods=['GET'])
 def login():
-	data = request.args.get()
+	data = request.args.get('username','password' )
 	print(data)
 ##    username = request.args.get('username')
 #  print(data['username'])
