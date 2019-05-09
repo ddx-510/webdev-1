@@ -1,5 +1,5 @@
 # imports go here.
-from flask import Flask
+from flask import Flask request
 
 app = Flask(__name__)
 
@@ -11,9 +11,12 @@ def index():
     return "Hello, world!"
 
 
-@app.route('/login')
-def login():
-    return 'login'
+@app.route('/login', methods=['GET'])
+    def login():
+        username = request.args.get('username')
+        print(username)
+        password= request.args.get('password')
+        print(password)
 
 @app.route('/user/<username>')
 def profile(username):
