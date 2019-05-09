@@ -10,13 +10,25 @@ app = Flask(__name__)
 def index():
     return "Hello, world!"
 
-@app.route('/projects/')
-def projects():
-    return 'The project page'
 
-@app.route('/about')
-def about():
-    return 'The about page'
+@app.route('/login')
+def login():
+    return 'login'
+
+@app.route('/user/<username>')
+def profile(username):
+    return '{}\'s profile'.format(username)
+
+with app.test_request_context():
+    print(url_for('index'))
+    print(url_for('login'))
+    print(url_for('login', next='/'))
+    print(url_for('profile', username='John Doe'))
+
+/
+/login
+/login?next=/
+/user/John%20Doe
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
