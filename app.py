@@ -24,7 +24,7 @@ def profile(username):
 def post(post_ids):
    return "POST %d' % post_ids
  
-@app.route('/'):
+@app.route('/')
 def index():
   return '''
        <html>
@@ -32,7 +32,7 @@ def index():
          <body>
            <p>
               hi this is done by inline html!
-           </P>
+           </p>
          </body>
        </html>
   '''
