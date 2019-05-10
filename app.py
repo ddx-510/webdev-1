@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     return "Hello, world!"
 
-@app.route("/hello",methods=["GET])
+@app.route("/hello",methods=["GET"])
 def hello():
     return "THIS IS HELLO PAGE!"
                             
