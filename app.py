@@ -9,16 +9,20 @@ app = Flask(__name__)
 ## these functions dictate how your server responds to HTTP requests.
 ## Request object docs: http://flask.pocoo.org/docs/1.0/api/#flask.Request
 @app.route('/login', methods=['GET'])
-def login():
-   username = request.args.get('username')
+#def login():
+#  username = request.args.get('username')
 
-   password= request.args.get('password')
+ #  password= request.args.get('password')
 
-   return username + password
+ #  return username + password
 
-#@app.route('/user/<username>')
-#def profile(username):
-  #  return '{}\'s profile'.format(username)
+@app.route('/user/<username>')
+def profile(username):
+   return '{}\'s profile'.format(username)
+
+@app.route('/post/<int:post_ids>')
+def post(post_ids):
+   return "POST %d' % post_ids
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
