@@ -23,6 +23,19 @@ def profile(username):
 @app.route('/post/<int:post_ids>')
 def post(post_ids):
    return "POST %d' % post_ids
+ 
+@app.route('/'):
+def index():
+  return '''
+       <html>
+         <h1>hello</h1>
+         <body>
+           <p>
+              hi this is done by inline html!
+           </P>
+         </body>
+       </html>
+  '''
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
