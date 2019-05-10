@@ -3,17 +3,22 @@ from flask import Flask , request
 
 app = Flask(__name__)
 
+#https://ijijdijidj/login?username=ddx&password=pw1
+
 ### Routes ####
 ## these functions dictate how your server responds to HTTP requests.
 ## Request object docs: http://flask.pocoo.org/docs/1.0/api/#flask.Request
-@app.route("/", methods=["GET"])
-def index():
-    return "Hello, world!"
+@app.route('/login', methods=['GET'])
+def login():
+   username = request.args.get('username')
 
-@app.route("/hello",methods=["GET"])
-def hello():
-    return "THIS IS HELLO PAGE!"
-                            
+   password= request.args.get('password')
+
+   return username + password
+
+#@app.route('/user/<username>')
+#def profile(username):
+  #  return '{}\'s profile'.format(username)
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
