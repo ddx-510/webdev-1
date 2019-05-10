@@ -5,15 +5,13 @@ app.config["DEBUG"] = True
 
 user_comments = {}
 
-@app.route("/", methods=[     ,      ])  # hint: what is the methods we may use to differentiate two status?
-
+@app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == "   ":  # hint: what if the user does not click the post button?
-        return render_template("", user_comments=user_comments)  # hint:what is the name for your main page?
+    if request.method == "GET":
+        return render_template("index.html", user_comments=user_comments)
     else: # post
         user_comments[request.form["uname"]] = request.form["contents"]
-        return redirect(                )   # hint: if we want to go back to index function, what should we do inside the redirect?
-
+        return redirect(url_for('index'))
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
