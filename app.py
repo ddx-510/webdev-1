@@ -1,41 +1,19 @@
-# imports go here.
-from flask import Flask , request
+from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
+app.config["DEBUG"] = True
 
-#https://ijijdijidj/login?username=ddx&password=pw1
+user_comments = {}
 
-### Routes ####
-## these functions dictate how your server responds to HTTP requests.
-## Request object docs: http://flask.pocoo.org/docs/1.0/api/#flask.Request
-@app.route('/login', methods=['GET'])
-#def login():
-#  username = request.args.get('username')
+@app.route("/", methods=[     ,      ])  # hint: what is the methods we may use to differentiate two status?
 
- #  password= request.args.get('password')
-
- #  return username + password
-
-@app.route('/user/<username>')
-def profile(username):
-   return '{}\'s profile'.format(username)
-
-@app.route('/post/<int:post_ids>')
-def post(post_ids):
-   return 'POST %d' % post_ids
- 
-@app.route('/')
 def index():
-  return '''
-       <html>
-         <h1>hello</h1>
-         <body>
-           <p>
-              hi this is done by inline html!
-           </p>
-         </body>
-       </html>
-  '''
+    if request.method == "   ":  # hint: what if the user does not click the post button?
+        return render_template("", user_comments=user_comments)  # hint:what is the name for your main page?
+    else: # post
+        user_comments[request.form["uname"]] = request.form["contents"]
+        return redirect(                )   # hint: if we want to go back to index function, what should we do inside the redirect?
+
 
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
