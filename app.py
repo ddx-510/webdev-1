@@ -10,22 +10,6 @@ app = Flask(__name__)
 def index():
     return "Hello, world!"
 
-# /login?username=x&password=1
-
-@app.route('/login', methods=['GET'])
-def login():
-	##data = request.args.get('username','password' )
-	##print(data)
-   username = request.args.get('username')
-#  print(data['username'])
-   password= request.args.get('password')
- #   print(data['password'])
-   return username + password
-
-@app.route('/user/<username>')
-def profile(username):
-    return '{}\'s profile'.format(username)
-
 # This block is run if you execute this file locally, i.e. running 
 # `python3 app.py` from the command line. You can change the port if you want.
 # if you're curious: 
