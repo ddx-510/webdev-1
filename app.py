@@ -22,7 +22,7 @@ def profile(username):
 
 @app.route('/post/<int:post_ids>')
 def post(post_ids):
-   return "POST %d' % post_ids
+   return 'POST %d' % post_ids
  
 @app.route('/')
 def index():
